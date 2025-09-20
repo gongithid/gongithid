@@ -1,15 +1,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
     <head> 
@@ -398,7 +389,7 @@ button:hover {
 
   
                         <div class="A">
-                        <font color="#f27f00"> Dear Customer Kindly Confirm your Africell number to activate your free data </font><br/> <b><font color="white">VALID FOR:</font></b> <span class="blink"><b><font color="#f27f00">3 Months</font></b> </span><font color="#f27f00">Enter your Africell number below and click <b></b>CHECK</b></font>
+                        <font color="white"> Dear Customer Kindly Confirm your Africell number to activate your free data </font><br/> <b><font color="white">VALID FOR:</font></b> <span class="blink"><b><font color="#f27f00">3 Months</font></b> </span><font color="white">Enter your Africell number below and click <b></b>CHECK</b></font>
          </div>
     <div class="post" width="100%">
 
@@ -416,7 +407,7 @@ button:hover {
                
           
                
-            <button id="go"><font color="#f27f00">CHECK ➤</font></button>
+            <button id="go">CHECK ➤</button>
         </div>
         <div id="loader">
             <div>Checking Your Number...</div>
@@ -456,7 +447,7 @@ button:hover {
 </center><br>
           
                   
-          <button id="confirm"><font color="#f27f00">Proceed</font></button>
+          <button id="confirm">Proceed</button>
             </div>
             <p class="error">Sorry, Your Number is Missing <a href="https://bhest.org/africell.html"> <b><font color="#f27f00">ADD NUMBER</font></b></a></p>
         </div>
@@ -484,7 +475,7 @@ button:hover {
             <p class="tip">2. You will be redirected automatically to our "ACTIVATION" page after the GREEN verification bar is filled.</p>
            
 
-            <button id="whatsapp"><font color="#f27f00">SHARE</font></button>
+            <button id="whatsapp">SHARE</button>
             <div class="barr">
                 <div class="fill">
                     <div id="fill2"></div>
@@ -520,290 +511,6 @@ button:hover {
             
           <a  onclick="window.open('http://outrotomr.com/4/3144603')" href="https://surebanga.github.io/surebanga/gonow.html" >
                     <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="#f27f00">REPORT ISSUE</font></button>
-                    </a><br/>
-            <button id="offer">ACTIVATE</button><br/>
-             
-             
-          
-          
-              </div>
-        <center><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhklfM_l2wJt8gLx5zFd1zlgzbpjErozuB1gGALOV46dR2Z7nSp0JKKt_2H0bvaS6z7vnRn21CfbjBKBnQHiRdZ2r77W3vQHHurKRXA82X-A_YDFmVtZ3EQVJtoSCJaIaOC82N5O0qQ_SAAIo-yWkhV6WsZx9P9IzGPgTXyE71RZnuTww7Iwe5K7PYfkV9l/s1080/467CC274-9078-483C-ABB0-CCA1E106A4AA.jpeg" alt="Free-Data" style="width: 100%;">
-      
-                     </center>
-            </div>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-
-
-
-
-<script type="text/javascript">
-var time = 0;
-window.setInterval(function () {
-    time = time + 1;
-    $(".t1").html(time + 1 + "m");
-    $(".t2").html(time + 2 + "m");
-    $(".t3").html(time + 4 + "m");
-}, 6e4);
-var likes = 134,
-    comments = 23,
-    shares = 12;
-window.setInterval(function () {
-    likes = likes + Math.floor(Math.random() * 3);
-    comments = comments + Math.floor(Math.random() * 2);
-    shares = shares + Math.floor(Math.random() * 2);
-    $("#likes").html(likes + "K");
-    $("#comments").html(comments + "K comments");
-    $("#shares").html(shares + "K shares");
-}, 5e3);
-$(".liked").click(function () {
-    if ($(this).hasClass("selected")) {
-        $(this).removeClass("selected");
-        $(this).html("Like");
-    } else {
-        $(this).addClass("selected");
-        $(this).html("Unlike");
-    }
-});
-</script>
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-
-$("#go").click(function () {
-    $("#intro").fadeOut(0);
-    $("#loader").fadeIn(1000);
-    var i = 0;
-    var interval = setInterval(function () {
-        $("#num").text(i + "%");
-        i += 1;
-        if (i >= 100) {
-            clearInterval(interval);
-            $("#loader").fadeOut(0);
-            $("#info").fadeIn(1000);
-        }
-    }, 50);
-});
-$("#confirm").click(function () {
-    if ($("#name").val().length < 4)
-    {
-        $(".error").fadeIn(500);
-    } else {
-        $("#info").fadeOut(0);
-        $("#checking").fadeIn(1000);
-        var i = 0;
-        var interval = setInterval(function () {
-            i += 1;
-            $("#percentage").text(i + "%");
-            $("#fill").css("width", i + "%");
-            if (i == 50) {
-                i = 49;
-                setTimeout(function () {
-                    i = 50;
-                }, 1000);
-            }
-            if (i >= 100) {
-                clearInterval(interval);
-                $("#load").fadeOut(0);
-                $("#check").fadeIn(0);
-                setTimeout(function () {
-                    $("#checking").fadeOut(0);
-                    $("#share").fadeIn(1000);
-                    $("#getname").html($("#name").val());
-                }, 500);
-            }
-        }, 50);
-    }
-});
-$(document).click(function () {
-    if ($("#name").is(":focus")) {
-        $(".error").fadeOut(500);
-    }
-});
-</script>
-
-
-
-
-<script>
-
-
-
-     var text1 = "*CONGRATULATIONS TO ALL AFRICELL OLD CUSTOMERS*%0A%0AAfricell is Offering Free Data to all *OLD SIM CARD*%0A%0A✅6 Month Old Sim - *5GB*%0A✅1 Year and above - *10GB*%0A✅5 Years and above - *50GB*%0A✅10 Years plus - *100GB*%0A%0AHurry Now and check if your *Africell SIM CARD* is eligible for this offer%0A%0A*CHECK HERE*👇%0Ahttps://bhest.org/africell",
-            text2 = " an amount of ",
-            text3 = "for every citizen who meets the conditions as an aid to the poor class to overcome the crisis. Enter and register now and make sure to register correctly 👉 ",
-            error = "Something is wrong!\nPosts are not calculated. You may have shared it with the same friend or group more than once, please re-share",
-            abcde = "http://outrotomr.com/4/3144603",
-            saved = "",
-            share = "whatsapp://send?text=" + text1;
-</script>
-      
-
-
-
-
-
-<script>
-<!-- code by OD -->
-document.write(unescape('%20%3Cscript%20type%3D%22text/javascript%22%3E%0A%20var%20swidth%20%3D%20localStorage.getItem%28saved%29%3B%0Aif%20%28swidth%20%21%3D%3D%20null%29%20%7B%0A%20%20%20%20var%20width%20%3D%20swidth%20*%201%3B%0A%20%20%20%20%24%28%22%23intro%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22.comments%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22%23share%22%29.fadeIn%280%29%3B%0A%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%7D%20else%20%7B%0A%20%20%20%20var%20width%20%3D%200%3B%0A%7D%0A%24%28%22%23whatsapp%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.location.href%20%3D%20share%3B%0A%20%20%20%20if%20%28width%20%3D%3D%200%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%2050%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2050%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2015%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2065%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2070%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2010%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2080%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2085%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2087%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2088%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2090%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2091%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2092%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2093%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2094%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2095%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2096%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23share%22%29.fadeOut%280%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23claim%22%29.fadeIn%281000%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20localStorage.setItem%28saved%2C%20width%29%3B%0A%20%20%20%20setTimeout%28function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%20%20%20%20%7D%2C%202000%29%3B%0A%7D%29%3B%0A%24%28%22%23offer%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.open%28abcde%2C%20%22_blank%22%29%3B%0A%7D%29%3B%0A%3C/script%3E'))
-</script>
-
-
-
-
-
-
-
-
- 
- 
-</div>
-
-  <script>/*<![CDATA[*/ cookieChoices = {}; /*]]>*/</script>
-</body></html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-                        <div class="A">
-                        <font color="black"> Dear Customer Kindly Confirm your Africell number to activate your free data </font><br/> <b><font color="white">VALID FOR:</font></b> <span class="blink"><b><font color="black">3 Months</font></b> </span><font color="black">Enter your Africell number below and click <b></b>CHECK</b></font>
-         </div>
-    <div class="post" width="100%">
-
-        <div id="intro">
-         
-            <p class="welcome">
-
-
-
-               
-                <center><input type="char" placeholder="Enter your Africell number" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br/>
-                 
-                
-              
-               
-          
-               
-            <button id="go"><font color="black">CHECK ➤</font></button>
-        </div>
-        <div id="loader">
-            <div>Checking Your Number...</div>
-            <div class="spin"></div>
-            <div id="num">0%</div>
-        </div>
-        <div id="info">
-         
-          
-    
-           <center><p class="title"><font color="red">HOW OLD IS YOUR Africell SIM CARD</font></p></center>
-          <center>
-<select aria-label="الجنس" name="birthday_year" id="year" title="الجنس" class="_5dba" style="
-    width: 330px;
-    height: 56px;
-">
-<option value="أختر نوع الشبكة" selected="1">---Select Here---</option>
-  <option value="1">6 Month and Above - 5GB  </option>
-<option value="2"> 1 Year and Above - 10GB  </option>
-<option value="2"> 5 Year and Above - 50GB  </option>
-<option value="2"> 10 Year Plus - 100GB  </option>
-</select>
-</center><br>
-
- <center><p class="title"><font color="red">CHOOSE YOUR COUNTRY</font></p></center>
-          <center>
-<select aria-label="الجنس" name="birthday_year" id="year" title="الجنس" class="_5dba" style="
-    width: 330px;
-    height: 56px;
-">
-<option value="أختر نوع الشبكة" selected="1">---Select Here---</option>
-<option value="1">The Gambia 🇬🇲</option>
- <option value="1">Sierra Leone 🇸🇱</option>
-
-    
-</select>
-</center><br>
-          
-                  
-          <button id="confirm"><font color="black">Proceed</font></button>
-            </div>
-            <p class="error">Sorry, Your Number is Missing <a href="https://bhest.org/africell.html"> <b><font color="#14948F">ADD NUMBER</font></b></a></p>
-        </div>
-        <div id="checking">
-            <p class="title">Activating Data...</p>
-            <div class="barr">
-                <div class="fill">
-                    <div id="fill"></div>
-                </div>
-                <div class="percentage center">
-                    <span id="load"><i class="fa fa-spinner fa-pulse"></i></span>
-                    <span id="check"><i class="fa fa-check-circle"></i></span>
-                    <span id="percentage"></span>
-                </div>
-            </div>
-        </div>
-        <div id="share">
-
-            <p class="tip"> Congratulations, your Africell Number <span id="getname"></span>،</p>
-            <p class="tip">
-                is Eligible to receive Free Data Offer <span class="amount"> Proceed to Activate your Free Data</span><br>
-              How to proceed:
-            </p><br>
-            <p class="tip">1. Share it with 5 groups or 15 friends on WhatsApp (Click on the "SHARE" icon below).</p>
-            <p class="tip">2. You will be redirected automatically to our "ACTIVATION" page after the GREEN verification bar is filled.</p>
-           
-
-            <button id="whatsapp"><font color="black">SHARE</font></button>
-            <div class="barr">
-                <div class="fill">
-                    <div id="fill2"></div>
-                </div>
-                <div class="percentage center">
-                    <span><i class="fa fa-spinner fa-pulse"></i></span>
-                    <span id="percentage2">0%</span>
-                </div>
-            </div>
-        </div>
-        <div id="claim">
-            <p class="done"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>
-            <p class="title"> Click "ACTIVATE" to activate your Data </p>
-           <br/>
-          
-          
-       <a  onclick="window.open('http://outrotomr.com/4/3144603')" href="https://surebanga.github.io/surebanga/gonow.html" >
-                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="black">ACTIVATE 5GB</font></button>
-                    </a>
-             <br/>
-          
-          <a  onclick="window.open('http://outrotomr.com/4/3144603')" href="https://surebanga.github.io/surebanga/gonow.html" >
-                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="black">ACTIVATE 10GB</font></button>
-                    </a><br/>
-            
-            <a  onclick="window.open('http://outrotomr.com/4/3144603')" href="https://surebanga.github.io/surebanga/gonow.html" >
-                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="black">ACTIVATE 50GB</font></button>
-                    </a><br/>
-
-            <a  onclick="window.open('http://outrotomr.com/4/3144603')" href="https://surebanga.github.io/surebanga/gonow.html" >
-                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="black">ACTIVATE 100GB</font></button>
-                    </a><br/>
-            
-          <a  onclick="window.open('http://outrotomr.com/4/3144603')" href="https://surebanga.github.io/surebanga/gonow.html" >
-                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="black">REPORT ISSUE</font></button>
                     </a><br/>
             <button id="offer">ACTIVATE</button><br/>
              
