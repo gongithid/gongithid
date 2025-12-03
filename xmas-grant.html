@@ -2,24 +2,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <script>
-  function switchLanguage(lang) {
-    document.body.setAttribute('lang', lang);
-    // Optional: Store the preference in local storage to remember the choice on future visits
-    localStorage.setItem('websiteLang', lang);
-}
-
-// Optional: Check for saved language on page load
-window.onload = function() {
-    let savedLanguage = localStorage.getItem('websiteLang') || 'fr'; // Defaults to french
-    switchLanguage(savedLanguage);
-};
 
   
- </script>
   
-  
-  
+      <div id="google_translate_element"></div>
   
   
   
@@ -932,7 +918,7 @@ body[lang="fr"] [lang]:not([lang="fr"]) {
     <div class="container">
         <div class="post">
             <center>
-                <span class="amount" style="font-size: 18px; font-weight: 700;"><p lang="fr">CHRISTMAS CELEBRATION CASH GRANT</p></span>
+                <span class="amount" style="font-size: 18px; font-weight: 700;">CHRISTMAS CELEBRATION CASH GRANT</span>
                 <br><br> <div id="google_translate_element"></div>
 
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFioKcs77_CCpODxrBMgMR0W91tohvzKd2Um6suCcrYW-Zs4IRKDLNcrUMqMqx8ye0KvKtn-7sbO5TDGVlsK-AE_vAyCNQ4zhHsVL6YaE0mrcSLuaQsGu5aiAjfGyw1aC-yR7lf6CmU9Aozo2_SJaHCqhsHH4kwKBFWUc5K4XoGnrX9AhI2M7Y-S0tAJvH/s1800/3667B399-07A0-48F5-986A-0F8ED5EFA000.jpeg" alt="Bursary" style="width: 100%; max-height: 350px; object-fit: cover; display: block; border-radius: 15px;">
@@ -1698,7 +1684,13 @@ $(document).ready(function() {
         new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     }
 </script>
-<script type="text/javascript" src="//translate.google.com"></script>
 
+      <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      }
+    </script>
+<script type="text/javascript" src="//translate.google.com"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
