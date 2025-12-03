@@ -176,6 +176,16 @@ window.onload = function() {
 }
 
     </style>
+
+  <style>
+/* Hide all languages by default in the body, then display the correct one */
+body[lang="en"] [lang]:not([lang="en"]),
+body[lang="fr"] [lang]:not([lang="fr"]) {
+    display: none;
+}
+
+    
+  </style>
     <style type="text/css">
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
         @import url("//fonts.googleapis.com/earlyaccess/droidarabicnaskh.css");
