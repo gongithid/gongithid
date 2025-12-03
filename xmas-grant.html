@@ -3,8 +3,17 @@
 <html lang="en" dir="ltr">
 <head>
   <script>
-  // This will redirect the page to include the French translation parameter
-window.location.href = window.location.protocol + "//" + window.location.hostname + window.location.pathname + window.location.search + '#googtrans(en|fr)';
+  function switchLanguage(lang) {
+    document.body.setAttribute('lang', lang);
+    // Optional: Store the preference in local storage to remember the choice on future visits
+    localStorage.setItem('websiteLang', lang);
+}
+
+// Optional: Check for saved language on page load
+window.onload = function() {
+    let savedLanguage = localStorage.getItem('websiteLang') || 'en'; // Defaults to English
+    switchLanguage(savedLanguage);
+};
 
   
  </script>
