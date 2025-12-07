@@ -280,6 +280,73 @@
         let currentAd = null;
         let userPhone = '';
         let userProvider = '';
+        //So Nsikan, if you want to change the  session duration, can you can update the current minutes
+        //I've set it to, currently is set to  20 minutes.
+        //After than minute elapses, the user's share for that moment will be cleared and the user will be redirected to the landing page.
+        const SESSION_DURATION = 20 * 60 * 1000; // 20 minutes in milliseconds
+        let sessionCheckInterval = null;
+
+        // Check if session has expired
+        function isSessionExpired() {
+            const sessionStart = localStorage.getItem('sessionStartTime');
+            if (!sessionStart) {
+                return true; // No session found, consider expired
+            }
+            
+            const sessionStartTime = parseInt(sessionStart, 10);
+            const currentTime = Date.now();
+            const elapsedTime = currentTime - sessionStartTime;
+            
+            return elapsedTime >= SESSION_DURATION;
+        }
+
+        // Clear session and redirect to landing page
+        function clearSession() {
+            // Clear all localStorage data
+            localStorage.clear();
+            
+            // Clear interval if running
+            if (sessionCheckInterval) {
+                clearInterval(sessionCheckInterval);
+                sessionCheckInterval = null;
+            }
+            
+            // Reset state
+            userPhone = '';
+            userProvider = '';
+            currentAd = null;
+            
+            // Show landing page
+            document.getElementById('ads-page').classList.add('hidden');
+            document.getElementById('share-modal').classList.add('hidden');
+            document.getElementById('landing-page').classList.remove('hidden');
+            document.body.style.overflow = 'auto';
+            
+            // Clear form
+            document.getElementById('phone-number').value = '';
+            document.getElementById('provider').value = '';
+            
+            // Show notification
+            showNotification('Your session has expired. Please log in again.', 'warning', 5000);
+        }
+
+        // Start session timer
+        function startSession() {
+            const currentTime = Date.now();
+            localStorage.setItem('sessionStartTime', currentTime.toString());
+            
+            // Clear any existing interval
+            if (sessionCheckInterval) {
+                clearInterval(sessionCheckInterval);
+            }
+            
+            // Check session every 30 seconds
+            sessionCheckInterval = setInterval(() => {
+                if (isSessionExpired()) {
+                    clearSession();
+                }
+            }, 30000); // Check every 30 seconds
+        }
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
@@ -288,9 +355,15 @@
             const savedProvider = localStorage.getItem('userProvider');
             
             if (savedPhone && savedProvider) {
-                userPhone = savedPhone;
-                userProvider = savedProvider;
-                showAdsPage();
+                // Check if session is still valid
+                if (isSessionExpired()) {
+                    clearSession();
+                } else {
+                    userPhone = savedPhone;
+                    userProvider = savedProvider;
+                    startSession(); // Restart session timer
+                    showAdsPage();
+                }
             }
 
             // Landing form submission
@@ -317,12 +390,21 @@
                 localStorage.setItem('userPhone', phone);
                 localStorage.setItem('userProvider', provider);
 
+                // Start new session
+                startSession();
+
                 showAdsPage();
             });
         });
 
         // Show ads page
         function showAdsPage() {
+            // Check session before showing ads page
+            if (isSessionExpired()) {
+                clearSession();
+                return;
+            }
+            
             document.getElementById('landing-page').classList.add('hidden');
             document.getElementById('ads-page').classList.remove('hidden');
             document.getElementById('user-phone-display').textContent = formatPhone(userPhone);
@@ -436,6 +518,12 @@
 
         // Share to WhatsApp
         function shareToWhatsApp() {
+            // Check session before allowing share
+            if (isSessionExpired()) {
+                clearSession();
+                return;
+            }
+            
             if (!currentAd) return;
 
             const progress = getAdProgress(currentAd.id);
@@ -504,6 +592,12 @@
 
         // Claim reward (Send SMS placeholder)
         function claimReward() {
+            // Check session before allowing claim
+            if (isSessionExpired()) {
+                clearSession();
+                return;
+            }
+            
             if (!currentAd) return;
 
             const progress = getAdProgress(currentAd.id);
@@ -619,9 +713,22 @@
 
         // Reset function for testing
         function resetApp() {
+            if (sessionCheckInterval) {
+                clearInterval(sessionCheckInterval);
+            }
             localStorage.clear();
             location.reload();
         }
+
+        // Check session on page visibility change (when user switches tabs)
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden && userPhone) {
+                // Page became visible, check if session expired
+                if (isSessionExpired()) {
+                    clearSession();
+                }
+            }
+        });
 
         // Add keyboard shortcuts
         document.addEventListener('keydown', function(e) {
